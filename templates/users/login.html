@@ -1,0 +1,16 @@
+{% extends 'users/base.html' %}
+{% block body_block  %}
+<div class="jumbotron">
+
+    <h1>Please fill out the form to login</h1>
+    <form  method="post" action="{% url 'users:login' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="username">Enter Username</label>
+    <input type="text" name="username">
+    <label for="password">Enter Password:</label>
+    <input  type="password" name="password">
+    
+    <input type="submit" value="register">
+    </form>
+</div>
+{%endblock%}
